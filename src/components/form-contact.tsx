@@ -6,6 +6,13 @@ import {
     Button,
     Typography,
 } from "@material-tailwind/react";
+import axios from "axios";
+
+const SendEmail = () => {
+    axios.post("/api/sendEmail")
+    .then(() => console.log("Uhuuu"))
+    .catch(() => console.log("Oops"));
+}
 
 export function FormContact() {
     return (
@@ -71,7 +78,7 @@ export function FormContact() {
                         }
                         containerProps={{ className: "-ml-2.5" }}
                     />
-                    <Button className="mt-6" fullWidth>
+                    <Button className="mt-6" fullWidth onClick={SendEmail}>
                         Enviar
                     </Button>
                 </form>
